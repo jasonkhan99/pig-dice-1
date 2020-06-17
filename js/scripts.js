@@ -22,20 +22,25 @@ AddUser.prototype.calculateTotalScore = function() {
     this.totalScore = 0;
     alert("Game Over, Someone Wins!");
   }
+  return this.totalScore;
 }
 
 let player1 = new AddUser(0, 0, 0);
 let player2 = new AddUser(0, 0, 0);
 
+
 //user interface logic
 
 $(document).ready(function() {
-  $("#player1roll").click(function() {
 
+  $("#player1roll").click(function() {
+    let rollResult = player1.diceRoll()
+    $("#player1dice").text(rollResult);
   });
 
   $("#player1hold").click(function() {
-
+    let totalScore = player1.calculateTotalScore();
+    $("#player1total").text(totalScore);
   });
 
 
