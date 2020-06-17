@@ -1,0 +1,23 @@
+1.  The Program allows user1 to roll a dice numbered 1 through 6
+    Input: Click "roll dice"
+    Output: 4
+
+2.  The Program allows user2 to roll a dice numbered 1 through 6
+    Input: Click "roll dice"
+    Output: 3
+
+3.  The Program will create a Total score and turn score for each user. Each  will begin at 0;
+    Input: no input
+    Output: user1 total Score = 0, Turn Score = 0 & user2 Total Score = 0, Turn Score = 0
+
+4.  If user rolls a 1, turn score resets to 0 and turn changes to next user
+    Input: 1
+    Output: Turn Score = 0
+
+5.  If user holds, add turn score to total score for that user and turn changes to next user
+    Input: click "hold"
+    Output: turn score + total score
+
+6. If user1 or user2 total score is >= 100, game over, user with high score wins
+    Input: user1 total score = 103
+    Output: "User 1 Wins!!!", game ends - show option to play new game
