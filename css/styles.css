@@ -24,7 +24,15 @@ body {
   border-radius: 3px;
 }
 
+h4 {
+  line-height: 1.5em;
+}
+
 #photographer, .playerboxes {
   text-align: center;
   padding-top: 30px;
+}
+
+.jumbotron {
+  text-align: center;
 }
