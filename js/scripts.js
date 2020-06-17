@@ -38,7 +38,8 @@ $(document).ready(function() {
     $("#player1dice").text(rollResult1);
     if(rollResult1 === 1){
       $(".player1buttons").hide();
-      $(".not-player1s-turn").show()
+      $(".not-player1s-turn").show();
+      $(".not-player2s-turn").hide();
       $(".player2buttons").show();
     } 
   });
@@ -48,6 +49,7 @@ $(document).ready(function() {
     $("#player1total").text(totalScore1);
     $(".player1buttons").hide();
     $(".not-player1s-turn").show()
+    $(".not-player2s-turn").hide();
     $(".player2buttons").show();
   });
 
@@ -58,6 +60,7 @@ $(document).ready(function() {
     if(rollResult2 === 1){
       $(".player2buttons").hide();
       $(".not-player2s-turn").show()
+      $(".not-player1s-turn").hide();
       $(".player1buttons").show();
     }
   });
@@ -67,6 +70,7 @@ $(document).ready(function() {
     $("#player2total").text(totalScore2);
     $(".player2buttons").hide();
     $(".not-player2s-turn").show()
+    $(".not-player1s-turn").hide();
     $(".player1buttons").show();
   });
 });
