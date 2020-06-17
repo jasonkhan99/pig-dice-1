@@ -21,3 +21,15 @@
 6. If user1 or user2 total score is >= 100, game over, user with high score wins
     Input: user1 total score = 103
     Output: "User 1 Wins!!!", game ends - show option to play new game
+
+
+Game Starts
+User1 rolls dice
+    1. if 1, turn score = 0
+    2. if 2-6, add number to turn score
+    3. player chooses a or b
+        a) hold - add turn score to user 1 total score
+        b) rolls again, repeat steps 1 through 3
+    4. If user1 holds, program checks user1 and user2 total scores
+        a) if either score is 100 or more, end game
+        b) if scores are less than 100, turn changes
