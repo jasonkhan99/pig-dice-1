@@ -15,6 +15,13 @@ AddUser.prototype.diceRoll = function() {
   return rollValue;
 }
 
+AddUser.prototype.calculateTotalScore = function() {
+  this.totalScore += this.turnScore;
+  if (this.totalScore >= 100) {
+    alert("Game Over, Someone Wins!");
+  }
+}
+
 let player1 = new AddUser(0, 0, 0);
 let player2 = new AddUser(0, 0, 0);
 
