@@ -45,10 +45,12 @@ $(document).ready(function() {
 
 
   $("#player2roll").click(function() {
-
+    let rollResult2 = player2.diceRoll()
+    $("#player2dice").text(rollResult2);
   });
 
   $("#player2hold").click(function() {
-
+    let totalScore2 = player2.calculateTotalScore();
+    $("#player2total").text(totalScore2);
   });
 });
