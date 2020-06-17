@@ -1,28 +1,21 @@
 //business logic to create user object
-function AddUser(totalScore, turnScore) {
+function AddUser(totalScore, turnScore, rollValue) {
   this.totalScore = totalScore;
   this.turnScore = turnScore;
-  // this.rollValue = rollValue;
+  this.rollValue = rollValue;
 }
 
 AddUser.prototype.diceRoll = function() {
   let rollValue = Math.floor(Math.random() * 6) + 1;
-  return rollValue;
   if (rollValue === 1) {
-    player1.turnScore = 0;
+    this.turnScore = 0;
   } else {
-    player1.turnScore = turnScore + rollValue;
+    this.turnScore += rollValue;
   }
-  console.log(rollValue);
+  return rollValue;
 }
 
-//prototype.decideAction(currentDiceValue) {
-
-//}
-
-let player1 = new AddUser();
-let player2 = new AddUser();
-// let currentDiceValue = player1.diceRoll();
-// console.log(player1.diceRoll());
+let player1 = new AddUser(0, 0, 0);
+let player2 = new AddUser(0, 0, 0);
 
 //user interface logic
