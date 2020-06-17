@@ -34,23 +34,39 @@ let player2 = new AddUser(0, 0, 0);
 $(document).ready(function() {
 
   $("#player1roll").click(function() {
-    let rollResult = player1.diceRoll()
-    $("#player1dice").text(rollResult);
+    let rollResult1 = player1.diceRoll();
+    $("#player1dice").text(rollResult1);
+    if(rollResult1 === 1){
+      $(".player1buttons").hide();
+      $(".not-player1s-turn").show()
+      $(".player2buttons").show();
+    } 
   });
 
   $("#player1hold").click(function() {
-    let totalScore = player1.calculateTotalScore();
-    $("#player1total").text(totalScore);
+    let totalScore1 = player1.calculateTotalScore();
+    $("#player1total").text(totalScore1);
+    $(".player1buttons").hide();
+    $(".not-player1s-turn").show()
+    $(".player2buttons").show();
   });
 
 
   $("#player2roll").click(function() {
-    let rollResult2 = player2.diceRoll()
+    let rollResult2 = player2.diceRoll();
     $("#player2dice").text(rollResult2);
+    if(rollResult2 === 1){
+      $(".player2buttons").hide();
+      $(".not-player2s-turn").show()
+      $(".player1buttons").show();
+    }
   });
 
   $("#player2hold").click(function() {
     let totalScore2 = player2.calculateTotalScore();
     $("#player2total").text(totalScore2);
+    $(".player2buttons").hide();
+    $(".not-player2s-turn").show()
+    $(".player1buttons").show();
   });
 });
