@@ -1,4 +1,4 @@
-.not-player1s-turn, .player2buttons, #player1-roll-message {
+.not-player1s-turn, .player2buttons, #player1InitiallyHidden, #player2InitiallyHidden {
   display: none;
 }
 

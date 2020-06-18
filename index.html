@@ -23,11 +23,11 @@
               <button id="player1roll" class="btn btn-success">Roll Dice</button>
               <button id="player1hold" class="btn btn-info">Hold</button>
             </div>
-            <div>
-              <p id="player1-roll-message">You rolled a <span id="player1dice"></span></p>
+            <div id="player1InitiallyHidden">
+              <p>You rolled a <span id="player1dice"></span></p>
               <p>Your score for this turn is <span id="player1TotalDice"></span></p>
+              <p>Your current total score: <span id="player1total"></span></p>
               <p class="not-player1s-turn">It's player 2's turn now.</p>
-              <p>Your current total score is <span id="player1total"></span></p>
             </div>
           </div>
         </div> 
@@ -38,10 +38,11 @@
               <button id="player2roll" class="btn btn-success">Roll Dice</button>
               <button id="player2hold" class="btn btn-info">Hold</button>
             </div>
-            <div>
+            <div id="player2InitiallyHidden">
               <p>You rolled a <span id="player2dice"></span></p>
-              <p class="not-player2s-turn">It's player 1's turn now.</p>  
-              <p>Your current total score is <span id="player2total"></span></p>
+              <p>Your score for this turn is <span id="player2TotalDice"></span></p>
+              <p>Your current total score: <span id="player2total"></span></p>
+              <p class="not-player2s-turn">It's player 1's turn now.</p>
             </div>
           </div>
         </div>
