@@ -20,13 +20,24 @@ Open by downloading:
 
 Open via Bash/GitBash:
 1. Clone this repository onto your computer:
-`git clone {PUT_REPO_HERE}`
-2. Navigate into the `{NAME_OF_DIRECTORY}` directory in Visual Studio Code or preferred text editor
+`git clone https://github.com/LINDGRENBA/pig-dice.git`
+2. Navigate into the `/pig-dice/` directory in Visual Studio Code or preferred text editor
 `code .`
 3. Open index.html in Chrome or preferred browser:
 `open index.html`
 
 #### To see my live website go to {GH_PAGES_LINK_HERE}!
+
+## Project Specifications
+
+| Behavior | Input | Output |
+| -------- | ----- | ------ |
+| The Program allows user1 to roll a dice numbered 1 through 6 | Click "roll dice" | 4 |
+| The Program allows user2 to roll a dice numbered 1 through 6 | Click "roll dice" | 3 |
+| The Program will create a Total score and turn score for each user. Each  will begin at 0 | no input | user1 total Score = 0, Turn Score = 0 & user2 Total Score = 0, Turn Score = 0 |
+| If user rolls a 1, turn score resets to 0 and turn changes to next user | 1 | Turn Score = 0 |
+| If user holds, add turn score to total score for that user and turn changes to next user | click "hold" | turn score + total score |
+| If user1 or user2 total score is >= 100, game over, user with high score wins | user1 total score = 103 | "User 1 Wins!!!", game ends - show option to play new game |
 
 ## Known Bugs
 
