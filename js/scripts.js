@@ -1,8 +1,8 @@
-//business logic to create user object
+//business interface logic
 function AddUser(totalScore, turnScore, rollValueArray) {
   this.totalScore = totalScore;
   this.turnScore = turnScore;
-  this.rollValueArray = []; //not being by user logic at this time
+  this.rollValueArray = [];
 }
 
 AddUser.prototype.diceRoll = function() {
@@ -21,26 +21,22 @@ AddUser.prototype.calculateTotalScore = function() {
   this.totalScore += this.turnScore;
   this.turnScore = 0;
   this.rollValueArray = [];
-  // if (this.totalScore >= 100) {
-  //   this.totalScore = 0;
-  //   alert("Game Over, Someone Wins!");
-  // }
   return this.totalScore;
 }
 
 AddUser.prototype.checkForWinner = function() {
   if (this.turnScore + this.totalScore >= 100) {
-    alert("Game Over");
+    return true;
+  } else {
+    return false;
   }
 }
 
-let player1 = new AddUser(0, 0, 0);
-let player2 = new AddUser(0, 0, 0);
-
-
 //user interface logic
-
 $(document).ready(function() {
+  let player1 = new AddUser(0, 0, 0);
+  let player2 = new AddUser(0, 0, 0);
+
   $("#player1roll").click(function() {
     let rollResult1 = player1.diceRoll();
     $("#player1InitiallyHidden").show();
@@ -52,7 +48,12 @@ $(document).ready(function() {
       $(".not-player2s-turn").hide();
       $(".player2buttons").show();
     }
-    player1.checkForWinner();
+    let haveWon = player1.checkForWinner();
+    if(haveWon) {
+      $(".col-xs-6").hide();
+      $(".col-xs-12").show();
+      $("#winner").text("Player 1");
+    }
   });
 
   $("#player1hold").click(function() {
@@ -63,7 +64,6 @@ $(document).ready(function() {
     $(".not-player2s-turn").hide();
     $(".player2buttons").show();
   });
-
 
   $("#player2roll").click(function() {
     let rollResult2 = player2.diceRoll();
@@ -76,7 +76,12 @@ $(document).ready(function() {
       $(".not-player1s-turn").hide();
       $(".player1buttons").show();
     }
-    player2.checkForWinner();
+    let haveWon = player2.checkForWinner();
+    if(haveWon) {
+      $(".col-xs-6").hide();
+      $(".col-xs-12").show();
+      $("#winner").text("Player 2");
+    }
   });
 
   $("#player2hold").click(function() {
@@ -87,4 +92,8 @@ $(document).ready(function() {
     $(".not-player1s-turn").hide();
     $(".player1buttons").show();
   });  
+
+  $(".btn-danger").click(function() {
+    location.reload();
+  });
 });

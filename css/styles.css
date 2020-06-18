@@ -1,6 +1,8 @@
-.not-player1s-turn, .player2buttons, #player1InitiallyHidden, #player2InitiallyHidden {
+.not-player1s-turn, .player2buttons, #player1InitiallyHidden, #player2InitiallyHidden,   {
   display: none;
 }
+
+/* #gameOverMessage */
 
 .btn {
   margin: 10px 20px;
@@ -35,4 +37,15 @@ h4 {
 
 .jumbotron {
   text-align: center;
+}
+
+h1 {
+  color: red;
+}
+
+#gameOverMessage {
+  text-align: center;
+  border: 2px solid #000;
+  padding: 20px;
+  border-radius: 3px;
 }
