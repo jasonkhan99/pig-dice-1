@@ -1,8 +1,8 @@
 //business logic to create user object
-function AddUser(totalScore, turnScore, rollValue) {
+function AddUser(totalScore, turnScore, rollValueArray) {
   this.totalScore = totalScore;
   this.turnScore = turnScore;
-  this.rollValue = rollValue;
+  this.rollValueArray = []; //not being by user logic at this time
 }
 
 AddUser.prototype.diceRoll = function() {
@@ -12,6 +12,8 @@ AddUser.prototype.diceRoll = function() {
   } else {
     this.turnScore += rollValue;
   }
+  this.rollValueArray.push(rollValue);
+  console.log(this.rollValueArray);
   return rollValue;
 }
 
@@ -35,7 +37,9 @@ $(document).ready(function() {
 
   $("#player1roll").click(function() {
     let rollResult1 = player1.diceRoll();
+    $("#player1-roll-message").show();
     $("#player1dice").text(rollResult1);
+    $("#player1TotalDice").text(player1.turnScore);
     if(rollResult1 === 1){
       $(".player1buttons").hide();
       $(".not-player1s-turn").show();
