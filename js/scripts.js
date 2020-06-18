@@ -2,7 +2,6 @@
 function AddUser(totalScore, turnScore, rollValueArray) {
   this.totalScore = totalScore;
   this.turnScore = turnScore;
-  this.rollValueArray = [];
 }
 
 AddUser.prototype.diceRoll = function() {
@@ -12,15 +11,12 @@ AddUser.prototype.diceRoll = function() {
   } else {
     this.turnScore += rollValue;
   }
-  this.rollValueArray.push(rollValue);
-  console.log(this.rollValueArray);
   return rollValue;
 }
 
 AddUser.prototype.calculateTotalScore = function() {
   this.totalScore += this.turnScore;
   this.turnScore = 0;
-  this.rollValueArray = [];
   return this.totalScore;
 }
 

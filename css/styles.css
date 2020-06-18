@@ -1,11 +1,11 @@
-.not-player1s-turn, .player2buttons, #player1InitiallyHidden, #player2InitiallyHidden,   {
+.not-player1s-turn, .player2buttons, #player1InitiallyHidden, #player2InitiallyHidden, #gameOverMessage   {
   display: none;
 }
 
-/* #gameOverMessage */
 
 .btn {
   margin: 10px 20px;
+  width: 30%;
 }
 
 body {
@@ -16,6 +16,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Noto Serif', serif;
 }
 
 .container {
@@ -35,6 +36,10 @@ h4 {
   padding-top: 30px;
 }
 
+.well {
+  min-height: 200px;
+}
+
 .jumbotron {
   text-align: center;
 }
@@ -49,3 +54,22 @@ h1 {
   padding: 20px;
   border-radius: 3px;
 }
+
+h1, h2 {
+  font-family: 'Odibee Sans', cursive;
+}
+
+#instructions {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+#player1InitiallyHidden > p, #player2InitiallyHidden > p {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#player1InitiallyHidden, #player2InitiallyHidden {
+  padding-top: 20px;
+}
+
